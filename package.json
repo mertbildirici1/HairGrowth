@@ -1,0 +1,36 @@
+{
+  "name": "hairgrowth",
+  "version": "1.0.0",
+  "description": "Hair loss tracking web application with React frontend and Node.js backend",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspaces",
+    "build:backend": "npm run build --workspace=backend",
+    "build:frontend": "npm run build --workspace=frontend",
+    "install:all": "npm install && npm install --workspace=frontend && npm install --workspace=backend",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "clean": "npm run clean --workspaces && rm -rf node_modules"
+  },
+  "keywords": ["hair-loss", "tracking", "react", "nodejs", "typescript"],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mertbildirici1/HairGrowth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mertbildirici1/HairGrowth/issues"
+  },
+  "homepage": "https://github.com/mertbildirici1/HairGrowth#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
